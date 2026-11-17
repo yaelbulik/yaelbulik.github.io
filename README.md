@@ -6,7 +6,7 @@ Statische Website ohne Build-Schritt: HTML, CSS, etwas JavaScript.
 
 Ruhig und reduziert. Weiße Fläche, eine Grotesk (Archivo) für alles, eine Serif (Instrument Serif) nur für kleine Rubriken. Der Name „Yael Bulik“ steht in Syne ExtraBold und Rot – das einzige laute Element. Rot sonst nur als Rückmeldung beim Hovern. Alle Farben, Schriftgrößen und Abstände stehen als Tokens oben in `style.css`.
 
-- **Startseite:** Startfoto randlos als Vollbild (auch am Handy), Name mittig im unteren Drittel direkt auf dem Foto, darunter „Mode & Kunst“ und die Links – keine Felder oder Rahmen. Anderes Foto: `assets/img/start.jpg` austauschen, Höhe der Schrift über `align-items` in `.start` anpassen
+- **Startseite:** Startfoto randlos als Vollbild (auch am Handy), Name mittig im unteren Drittel direkt auf dem Foto, darunter „Mode & Kunst“ und die Links – keine Felder oder Rahmen. Anderes Foto: `assets/img/start.jpg` austauschen und `python3 tools/startfoto.py` ausführen (erzeugt die kleinen AVIF/WebP-Dateien), Höhe der Schrift über `align-items` in `.start` anpassen
 - **Arbeiten:** Liste, gruppiert nach Mode / Kunst / Objekte, Jahr grau daneben. Das Bild erscheint rechts nur beim Drüberfahren
 - **Über:** Text + Porträt, „Was ich mache“ auf heller Fläche, eine Aussage, die beim Scrollen Wort für Wort dunkel wird, Stationen + Anfrage
 - **Kontakt:** Button „Anfrage schreiben“ als Hauptaktion, darunter die E-Mail-Adresse und Instagram, rechts ein Bild
@@ -58,7 +58,7 @@ Die Platzhalter sind reines CSS (Stoffmuster) und verschwinden, sobald ein `bild
 
 ## Vor dem Livegang
 
-- [ ] **Schriften lokal hosten** – Google Fonts direkt einzubinden ist in Deutschland abmahnrelevant. Archivo, Instrument Serif und Syne z. B. über google-webfonts-helper herunterladen und per `@font-face` einbinden.
+- [x] **Schriften lokal gehostet** – Archivo, Instrument Serif und Syne liegen als WOFF2 in `assets/fonts/` (nur Latein), kein Aufruf an Google mehr.
 - [x] Startfoto eingesetzt (`assets/img/start.jpg`, erster Versuch) – Teilen-Bild `assets/img/share.jpg` daraus geschnitten
 - [ ] Impressum (nur Name + E-Mail) und Datenschutzerklärung rechtlich prüfen lassen
 - [ ] Alles in `[eckigen Klammern]` ersetzen

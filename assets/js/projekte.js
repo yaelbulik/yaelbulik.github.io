@@ -4,7 +4,7 @@
    Neue Arbeit = einen Eintrag kopieren und anpassen.
 
    Felder
-   slug       eindeutig, klein, ohne Leerzeichen → arbeit.html?p=<slug>
+   slug       eindeutig, klein, ohne Leerzeichen → arbeit?p=<slug>
    nr         Werknummer (frei wählbar)
    kategorie  'mode' | 'kunst' | 'objekt'
    art        Art der Arbeit, z. B. 'Abendkleid' – steht auf der Detailseite

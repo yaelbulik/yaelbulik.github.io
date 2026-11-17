@@ -3,7 +3,7 @@
    Ohne Bibliotheken. Läuft auch per Doppelklick auf die HTML-Datei.
 
    archiv()     Arbeiten-Seite: gruppierte Liste, Bild erscheint beim Hovern
-   detail()     Detailseite arbeit.html?p=<slug>
+   detail()     Detailseite arbeit?p=<slug>
    entwickeln() Moment „picture-develops“: Hauptfoto entwickelt sich einmal
    woerter()    Moment „word-highlight“: Aussage wird Wort für Wort dunkel
    ========================================================================= */
@@ -22,7 +22,7 @@
   const esc = (wert = '') => String(wert).replace(/[&<>"']/g, (z) => (
     { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[z]
   ));
-  const link = (p) => `arbeit.html?p=${encodeURIComponent(p.slug)}`;
+  const link = (p) => `arbeit?p=${encodeURIComponent(p.slug)}`;
 
   // Bildfeld: Foto, falls vorhanden – sonst ein CSS-Platzhalter
   function bildfeld({ muster = 'leinen', bild, alt = '', zoom = 1, format, laden = 'lazy' } = {}) {
@@ -112,7 +112,7 @@
     if (i === -1) {
       wurzel.innerHTML = `
         <div class="seite">
-          <a class="arbeit__zurueck" href="arbeiten.html">← Alle Arbeiten</a>
+          <a class="arbeit__zurueck" href="arbeiten">← Alle Arbeiten</a>
           <h1 class="titel">Diese Arbeit gibt es nicht.</h1>
         </div>`;
       return;
@@ -144,7 +144,7 @@
     wurzel.innerHTML = `
       <section class="zweiteilig" aria-labelledby="arbeit-titel">
         <div>
-          <a class="arbeit__zurueck" href="arbeiten.html">← Alle Arbeiten</a>
+          <a class="arbeit__zurueck" href="arbeiten">← Alle Arbeiten</a>
           <header class="arbeit__kopf">
             <h1 class="titel" id="arbeit-titel">${esc(p.titel)}</h1>
             <p class="arbeit__meta">${meta}</p>

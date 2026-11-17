@@ -21,34 +21,42 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
-  <!-- Schriften: vor dem Livegang lokal hosten (DSGVO) – siehe README -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..600&family=Instrument+Serif&family=Syne:wght@800&display=swap">
+  <link rel="preload" href="assets/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/syne-800-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="stylesheet" href="assets/css/style.css?v=22">
+  <link rel="stylesheet" href="assets/css/style.css?v=25">
 </head>
 <body>
   <main class="start">
     <!--
-      Startfoto: assets/img/start.jpg. Anderes Foto: Datei austauschen oder den Pfad unten ändern.
-      Ohne background-image zeigt die Seite einen unscharfen Platzhalter.
+      Startfoto: Quelle assets/img/start.jpg (2000 × 1500). Daraus entstehen die kleineren
+      AVIF/WebP-Dateien start-800 … start-2000 (siehe README, „Startfoto tauschen“).
     -->
-    <div class="start__foto" style="background-image: url('assets/img/start.jpg')" aria-hidden="true"></div>
+    <picture class="start__foto" aria-hidden="true">
+      <source media="(max-aspect-ratio: 2/3)" type="image/avif" sizes="max(100vw, 67vh)"
+        srcset="assets/img/start-hoch-600.avif 600w, assets/img/start-hoch-1000.avif 1000w">
+      <source media="(max-aspect-ratio: 2/3)" type="image/webp" sizes="max(100vw, 67vh)"
+        srcset="assets/img/start-hoch-600.webp 600w, assets/img/start-hoch-1000.webp 1000w">
+      <source type="image/avif" sizes="max(100vw, 134vh)"
+        srcset="assets/img/start-800.avif 800w, assets/img/start-1200.avif 1200w, assets/img/start-1600.avif 1600w, assets/img/start-2000.avif 2000w">
+      <source type="image/webp" sizes="max(100vw, 134vh)"
+        srcset="assets/img/start-800.webp 800w, assets/img/start-1200.webp 1200w, assets/img/start-1600.webp 1600w, assets/img/start-2000.webp 2000w">
+      <img src="assets/img/start-1600.jpg" width="2000" height="1500" alt="" fetchpriority="high" decoding="async">
+    </picture>
 
     <!-- Mittig im unteren Drittel, direkt auf dem Foto (ohne Felder) -->
     <div class="start__etikett">
       <h1 class="start__name wortmarke"><span>Yael</span> <span>Bulik</span></h1>
       <p class="start__label">Mode &amp; Kunst</p>
       <nav class="start__nav" aria-label="Hauptnavigation">
-        <a href="arbeiten.html">Arbeiten</a>
-        <a href="ueber.html">Über</a>
-        <a href="kontakt.html">Kontakt</a>
+        <a href="arbeiten">Arbeiten</a>
+        <a href="ueber">Über</a>
+        <a href="kontakt">Kontakt</a>
       </nav>
       <p class="start__recht">
         <a href="https://www.instagram.com/yalkalu" target="_blank" rel="noopener">Instagram</a>
-        <a href="impressum.html">Impressum</a>
-        <a href="impressum.html#datenschutz">Datenschutz</a>
+        <a href="impressum">Impressum</a>
+        <a href="impressum#datenschutz">Datenschutz</a>
       </p>
     </div>
   </main>

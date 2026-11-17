@@ -16,6 +16,21 @@
    ========================================================================= */
 
 
+/* 0 · Schriften (selbst gehostet, nur der lateinische Zeichensatz) --------- */
+@font-face {
+  font-family: "Archivo"; font-style: normal; font-weight: 400 600; font-display: swap;
+  src: url("../fonts/archivo-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Instrument Serif"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../fonts/instrument-serif-latin.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Syne"; font-style: normal; font-weight: 800; font-display: swap;
+  src: url("../fonts/syne-800-latin.woff2") format("woff2");
+}
+
+
 /* 1 · Tokens ------------------------------------------------------------- */
 :root {
   /* Farbe */
@@ -210,9 +225,9 @@ a.eintrag:hover, .weiter a:hover, .arbeit__zurueck:hover,
 
 
 /* 5 · Startseite ---------------------------------------------------------
-   Foto als background-image direkt auf .start__foto (siehe index.html) –
-   so wird der Pfad von der Seite aus gelesen, nicht vom Stylesheet.
-   Name, Zeile und Links treten beim Laden einmal ein.                    */
+   Foto als <picture> in .start__foto (siehe index.html), damit der Browser
+   es früh und in passender Größe lädt. Name, Zeile und Links treten beim
+   Laden einmal ein.                                                      */
 /* Foto randlos über den ganzen Bildschirm – auch am Handy */
 .start {
   position: relative;
@@ -225,21 +240,11 @@ a.eintrag:hover, .weiter a:hover, .arbeit__zurueck:hover,
   text-align: center;
   background: var(--flaeche);
 }
-.start__foto {
-  position: absolute; inset: 0;
-  background-position: 50% 25%; /* Gesicht bleibt im Bild */
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-/* Platzhalter: weiches Licht wie ein unscharfes Foto – nur ohne echtes Bild */
-.start__foto:not([style*="background-image"])::before {
-  content: "";
-  position: absolute; inset: -10%;
-  background:
-    radial-gradient(45% 55% at 22% 25%, rgba(255, 255, 255, .85), transparent 70%),
-    radial-gradient(35% 45% at 80% 78%, rgba(60, 58, 54, .2), transparent 70%),
-    linear-gradient(160deg, #F4F4F1, #E2E2DC);
-  filter: blur(30px);
+.start__foto { position: absolute; inset: 0; }
+.start__foto img {
+  display: block; width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 50% 25%; /* Gesicht bleibt im Bild */
 }
 /* Schrift direkt auf dem Foto, ohne Felder oder Rahmen. Im unteren Drittel
    liegt sie auf der hellen Korsage und dem Rock – dort bleibt sie lesbar,
@@ -269,7 +274,7 @@ a.eintrag:hover, .weiter a:hover, .arbeit__zurueck:hover,
 }
 
 /* Hero-Eintritt: der Block steigt beim Laden einmal auf */
-@keyframes ankommen { from { opacity: 0; transform: translateY(16px); } }
+@keyframes ankommen { from { opacity: .01; transform: translateY(16px); } }
 .start__etikett { animation: ankommen .9s var(--m-ease) both; }
 
 
