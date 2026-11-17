@@ -1,0 +1,9 @@
+# Mac-Systemdateien
+.DS_Store
+
+# Lokale Arbeitsdateien (Vorschau-Server, Prüfskripte)
+.claude/
+.taste-skill/
+
+# Interne Notizen – bleiben lokal, nicht im öffentlichen Repo
+DESIGNPLAN.md

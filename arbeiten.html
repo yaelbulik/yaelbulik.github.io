@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de" data-type="service">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arbeiten — Yael Bulik</title>
+  <meta name="description" content="Alle Arbeiten von Yael Bulik: Mode, Kunst und Objekte aus Berlin.">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta name="page-type" content="service">
+  <meta name="site-kind" content="other">
+  <meta property="og:title" content="Arbeiten — Yael Bulik">
+  <meta property="og:description" content="Alle Arbeiten von Yael Bulik: Mode, Kunst und Objekte aus Berlin.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/share.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Schriften: vor dem Livegang lokal hosten (DSGVO) – siehe README -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..600&family=Instrument+Serif&family=Syne:wght@800&display=swap">
+
+  <link rel="stylesheet" href="assets/css/style.css?v=22">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="springen" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="kopf">
+    <a class="logo wortmarke" href="index.html">Yael Bulik</a>
+    <nav class="kopf__nav" aria-label="Hauptnavigation">
+      <a href="arbeiten.html" aria-current="page">Arbeiten</a>
+      <a href="ueber.html">Über</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <!-- Liste aus assets/js/projekte.js, gruppiert nach Kategorie.
+       Das Bild rechts erscheint nur beim Drüberfahren. -->
+  <main id="inhalt" class="zweiteilig" data-archiv>
+    <h1 class="sr-only">Arbeiten</h1>
+    <div data-listen>
+      <noscript><p>Für die Werkübersicht bitte JavaScript aktivieren.</p></noscript>
+    </div>
+    <div class="zweiteilig__medien" aria-hidden="true">
+      <div class="medienrahmen" data-bild></div>
+    </div>
+  </main>
+
+  <footer class="fuss">
+    <p class="fuss__besuch">Mode &amp; Kunst aus Berlin</p>
+    <nav aria-label="Weitere Links">
+      <a href="https://www.instagram.com/yalkalu" target="_blank" rel="noopener">Instagram</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="impressum.html#datenschutz">Datenschutz</a>
+    </nav>
+    <p>© <span data-jahr>2026</span> Yael Bulik</p>
+  </footer>
+
+  <script src="assets/js/projekte.js?v=22"></script>
+  <script src="assets/js/main.js?v=22"></script>
+</body>
+</html>
